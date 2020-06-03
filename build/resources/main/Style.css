@@ -1,0 +1,15 @@
+#mainWindowMenuBar {
+    -fx-background-color : #756e6e;
+}
+
+.menu .label {
+    -fx-text-fill : #fff;
+}
+
+.menu-item .label {
+    -fx-text-fill : #000;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill : #fff;
+}

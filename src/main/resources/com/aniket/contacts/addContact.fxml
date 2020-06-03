@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.layout.VBox?>
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.aniket.contacts.AddContactController">
+
+    <content>
+        <VBox spacing="8">
+            <VBox>
+                <Label text="Name: "/>
+                <TextField fx:id="nameTextField"/>
+            </VBox>
+
+            <VBox>
+                <Label text="Phone No: "/>
+                <TextField fx:id="phoneTextField"/>
+            </VBox>
+
+            <VBox>
+                <Label text="Email: "/>
+                <TextField fx:id="emailTextField"/>
+            </VBox>
+
+            <VBox>
+                <Label text="Address (Limit = 50): "/>
+                <TextArea fx:id="addressTextArea"/>
+            </VBox>
+
+            <VBox>
+                <Label text="Notes (If any): "/>
+                <TextField fx:id="notesTextField"/>
+            </VBox>
+        </VBox>
+    </content>
+
+</DialogPane>

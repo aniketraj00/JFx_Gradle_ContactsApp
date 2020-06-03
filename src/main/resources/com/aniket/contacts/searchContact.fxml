@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.aniket.contacts.searchContactController">
+
+    <content>
+        <GridPane alignment="CENTER" hgap="10" vgap="10">
+            <VBox GridPane.rowIndex="0" GridPane.columnIndex="0" spacing="10">
+                <HBox spacing="5">
+                    <Label text="Search By">
+                        <padding>
+                            <Insets top="5"/>
+                        </padding>
+                    </Label>
+                    <ChoiceBox fx:id="filterChoiceBox" value="Name">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Name"/>
+                                <String fx:value="Phone No"/>
+                                <String fx:value="Email Id"/>
+                                <String fx:value="Address"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+                </HBox>
+                <TextField fx:id="searchTextField"/>
+            </VBox>
+            <TableView GridPane.rowIndex="1" GridPane.columnIndex="0" fx:id="searchTableView" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn text="Phone No">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="phoneNo"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn text="Email">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="email"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn text="Address">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="address"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn text="Notes">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="notes"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                </columns>
+            </TableView>
+        </GridPane>
+    </content>
+
+
+</DialogPane>

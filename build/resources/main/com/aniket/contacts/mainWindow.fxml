@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.aniket.contacts.Controller"
+            stylesheets="@/Style.css" fx:id="mainWindow">
+
+    <top>
+        <VBox>
+            <MenuBar id="mainWindowMenuBar">
+                <Menu text="File">
+                    <MenuItem text="New" onAction="#addItem"/>
+                    <MenuItem text="Edit" onAction="#editItem"/>
+                    <MenuItem text="Delete" onAction="#deleteItem"/>
+                    <MenuItem text="Search" onAction="#searchItem"/>
+                    <MenuItem text="Exit" onAction="#quit"/>
+                </Menu>
+            </MenuBar>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="mainWindowTableView">
+
+            <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+
+            <columns>
+                <TableColumn text="Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Phone No">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="phoneNo"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Email">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="email"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Address">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="address"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Notes">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="notes"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+            </columns>
+
+        </TableView>
+
+    </center>
+
+</BorderPane>
